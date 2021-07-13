@@ -29,21 +29,16 @@
       </div>
 
       <div class="item">
-        <p>*عنوان البريد الإلكتروني </p>
+        <p> الإسم الثلاثي *</p>
         <div class="half-width">
-          <input type="text" name="email" type="email" placeholder="Email" />
+          <input name="name" placeholder="Name" required />
         </div>
       </div>
       <div class="item">
-        <p>* الإسم الثلاثي </p>
+        <p> رقم الجوال *</p>
         <div class="half-width">
-          <input name="name" placeholder="Name" />
-        </div>
-      </div>
-      <div class="item">
-        <p> *رقم الجوال</p>
-        <div class="half-width">
-          <input type="text" name="phone" placeholder="### ### ####" />
+          <input type="text" name="phone" pattern="^(05)[0-9]{8}$" title="رقم الجوال غير صحيح"
+            placeholder="### ### ####" required />
         </div>
       </div>
       <!-- <div class="item">
@@ -60,7 +55,7 @@
       </div> -->
 
       <div class="question">
-        <p> * الحي</p>
+        <p> الحي * </p>
         <div class="question-answer">
           <div>
             <input type="radio" value="none" id="radio_1" name="question1" />
@@ -78,23 +73,30 @@
         </div>
       </div>
       <div class="item">
-        <p> *العنوان كتابة</p>
+        <p> العنوان كتابة *</p>
         <input type="text" name="name" placeholder="Address" required />
       </div>
 
       <div class="item">
-        <p> *المرحلة الدراسية</p>
+        <p> المرحلة الدراسية *</p>
         <select required>
           <option value="1">جامعة</option>
           <option value="2">مدرسة</option>
         </select>
       </div>
       <div class="item">
-        <p> * اسم الجامعة او الكلية او المدرسة</p>
+        <p>  اسم الجامعة او الكلية او المدرسة *</p>
         <select required>
           <option value="1">جامعة الملك عبدالعزيز (السليمانية)</option>
           <option value="2">:أخرى</option>
         </select>
+      </div>
+
+      <div class="item">
+        <p>عنوان البريد الإلكتروني </p>
+        <div class="half-width">
+          <input type="text" name="email" type="email" placeholder="Email" />
+        </div>
       </div>
 
       <div class="item">
@@ -112,20 +114,20 @@
 </html>
 
 <script>
-const $form = $('#application1')
+  const $form = $('#application1')
 
-$form.on('submit', submitHandler)
+  $form.on('submit', submitHandler)
 
-function submitHandler (e) {
-  e.preventDefault()
+  function submitHandler(e) {
+    e.preventDefault()
 
-  $.ajax({
-    url: '/addUserFormSubmit',
-    type:'POST',
-    data: $form.serialize()
-  }).done(response => {
-    console.log(response)
-  })
-}
+    $.ajax({
+      url: '/addUserFormSubmit',
+      type: 'POST',
+      data: $form.serialize()
+    }).done(response => {
+      console.log(response)
+    })
+  }
 
 </script>
