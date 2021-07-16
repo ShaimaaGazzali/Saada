@@ -3,16 +3,16 @@ html, body {
     }
     body, div, form, input, select, textarea, p { 
     padding: 0;
-    margin: 0;
+    /* margin: 0; */
     outline: none;
     font-family: Roboto, Arial, sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     color: #666;
     line-height: 22px;
     }
     h1 {
     position: absolute;
-    margin: 0;
+    /* margin: 0; */
     line-height: 55px;
     font-size: 55px;
     color: #fff;
@@ -30,17 +30,19 @@ html, body {
     padding: 20px;
     border-radius: 6px;
     background: #fff;
-    box-shadow: 0 0 30px 0 #a37547; 
+    box-shadow: 0 0 30px 0 #726868; 
     }
     .banner {
     position: relative;
     height: 230px;
-    background-image: url("/uploads/media/default/0001/02/3dd647f39593e88f45f61aaac6ff3027dce15506.jpeg");  
+    background-image: url("../images/banner.jpg");  
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    color: #ffff;
+
     }
     .banner::after {
     content: "";
@@ -68,12 +70,12 @@ html, body {
     padding: 5px;
     }
     .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
-    color: #a37547;
+    color: #726868;
     }
     .item input:hover, .item select:hover, .item textarea:hover {
     border: 1px solid transparent;
-    box-shadow: 0 0 6px 0 #a37547;
-    color: #a37547;
+    box-shadow: 0 0 6px 0 #726868;
+    color: #726868;
     }
     .item {
     position: relative;
@@ -101,7 +103,7 @@ html, body {
     border: 2px solid #ccc;
     }
     input[type=radio]:checked + label:before, label.radio:hover:before {
-    border: 2px solid #a37547;
+    border: 2px solid #726868;
     }
     label.radio:after {
     content: "";
@@ -110,7 +112,7 @@ html, body {
     left: 5px;
     width: 8px;
     height: 4px;
-    border: 3px solid #a37547;
+    border: 3px solid #726868;
     border-top: none;
     border-right: none;
     transform: rotate(-45deg);
@@ -128,13 +130,13 @@ html, body {
     padding: 10px;
     border: none;
     border-radius: 5px; 
-    background: #6b4724;
+    background: #f60101;
     font-size: 16px;
     color: #fff;
     cursor: pointer;
     }
     button:hover {
-    box-shadow: 0 0 18px 0 #3d2914;
+    box-shadow: 0 0 18px 0 #726868;
     }
     @media (min-width: 568px) {
     .half-width, .city-item {
@@ -142,11 +144,16 @@ html, body {
     flex-wrap: wrap;
     justify-content: space-between;
     }
-    /* .half-width input, .city-item input {
+    .half-width input, .city-item input {
     width: calc(50% - 20px);
-    } */
+    }
     .city-item select {
     width: calc(50% - 8px);
     }
     .center {text-align: center;}
-    }
+
+    ::placeholder {
+        color: rgba(13, 13, 14, 0.61);
+        font-size: .75em;
+      }
+}
