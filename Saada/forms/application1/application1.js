@@ -4,7 +4,10 @@ let schools = [{ name: "school1", value: 1 }, { name: "school2", value: 2 }, { n
 function setSchools(event) {
     debugger
     var select = document.getElementById("selectSchool");
-
+    for (i = select.length - 1; i >= 0; i--) {
+        select.remove(i);
+    }
+    
     if (event == 1) {
         document.getElementById("schoolLabel").textContent = "اسم الجامعة او الكلية *";
         schools = [{ name: "school1", value: 1 }, { name: "school3", value: 3 }];
