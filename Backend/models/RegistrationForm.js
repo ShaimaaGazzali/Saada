@@ -1,9 +1,16 @@
 var mongoose = require('mongoose');
 
 var RegistrationFormSchema = new mongoose.Schema({
-  title: String,
-  description: String,
-  body: String
+  name: String,
+  mobile: String,
+  neighborhood: String,
+  otherNeighborhood: string,
+  Address: String,
+  level: String,
+  school: String,
+  email: String,
+  comment: String,
+
 }, { timestamps: true });
 
 RegistrationFormSchema.methods.toJSON = function () {

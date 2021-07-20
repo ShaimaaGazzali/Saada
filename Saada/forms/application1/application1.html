@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity=""
     crossorigin="anonymous">
   <link rel="stylesheet" href="../application.css">
-  <script src="application1.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -23,6 +23,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
+
+  <script src="application1.js"></script>
+
 </head>
 
 <body>
@@ -54,12 +57,12 @@
       <div class="item form-group row">
         <label class="col-sm-1 col-form-label"> رقم الجوال *</label>
         <div class="col-sm-10">
-          <input class="form-control" type="text" name="phone" pattern="^(05)[0-9]{8}$" title="رقم الجوال غير صحيح"
+          <input class="form-control" type="text" name="mobile" pattern="^(05)[0-9]{8}$" title="رقم الجوال غير صحيح"
             placeholder="### ### ####" required />
         </div>
       </div>
-      <!-- <div class="item">
-        <p> * الحي</p>
+      <!-- <div class="item"> -->
+        <!-- <p> * الحي</p>
         <select required>
           <option value="">الصفا</option>
           <option value="1">المروة</option>
@@ -67,11 +70,18 @@
           <option value="3">الوزيرية</option>
           <option value="4">السنابل</option>
           <option value="5">:أخرى</option>
-          <input type="text" name="neighborhood "  required/>
+          <input type="text"  placeholder="Other"/>
         </select>
       </div> -->
-
-      <div class="question form-group row">
+      <div class="item form-group row">
+        <label id="schoolLabel" class="col-sm-1 col-form-label">الحي * </label>
+        <div class="col-sm-10">
+          <select id="selectNeighborhood" name="neighborhood"  required>
+          <input type="text"  placeholder="أخرى" name="otherNeighborhood"/>
+        </select>
+        </div>
+      </div>
+      <!-- <div class="question form-group row">
         <label class="col-sm-1 col-form-label"> الحي * </label>
         <div class=" col-sm-10 question-answer">
           <div>
@@ -84,31 +94,31 @@
           </div>
           <div class="row">
             <div class="item col-sm-3">
-              <input class=" form-control" type="text" name="neighborhood" placeholder="Other" required />
+              <input class=" form-control" type="text" name="neighborhood" placeholder="Other" />
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="item form-group row">
         <label class="col-sm-1 col-form-label"> العنوان كتابة *</label>
         <div class="col-sm-10">
-          <input class="form-control" type="text" name="name" placeholder="Address" required />
+          <input class="form-control" type="text" name="Address" placeholder="Address" required />
         </div>
       </div>
 
       <div class="item form-group row">
         <label class="col-sm-1 col-form-label"> المرحلة الدراسية *</label>
         <div class="col-sm-10">
-          <select onchange="setSchools(value)" required>
-            <option value="1">جامعة</option>
-            <option value="2">مدرسة</option>
+          <select onchange="setSchools(value)" name="level" id="selectLevel" required >
+            <!-- <option value="1">جامعة</option>
+            <option value="2">مدرسة</option> -->
           </select>
         </div>
       </div>
       <div class="item form-group row">
         <label id="schoolLabel" class="col-sm-1 col-form-label">اسم الجامعة او الكلية * </label>
         <div class="col-sm-10">
-          <select id="selectSchool" required>
+          <select id="selectSchool" name="school" required>
             <!-- <option For="let school of schools" value="school.value">school.name</option> -->
           </select>
         </div>
@@ -124,12 +134,12 @@
       <div class="item form-group row">
         <label class="col-sm-1 col-form-label"> إستفسار</label>
         <div class="col-sm-10">
-          <textarea class="form-control" rows="3" placeholder="Comments"></textarea>
+          <textarea class="form-control" rows="3" name="comment" placeholder="Comments"></textarea>
         </div>
       </div>
-
+<!-- type="submit" -->
       <div class="btn-block form-group row">
-        <button class="center-block col-2" style="color: #fff;" type="submit" href="/">إرسال</button>
+        <button class="center-block col-2" style="color: #fff;"  onclick="save(event)">إرسال</button>
       </div>
     </form>
   </div>
