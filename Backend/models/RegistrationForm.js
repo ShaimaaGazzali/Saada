@@ -4,7 +4,7 @@ var RegistrationFormSchema = new mongoose.Schema({
   name: String,
   mobile: String,
   neighborhood: String,
-  otherNeighborhood: string,
+  otherNeighborhood: String,
   Address: String,
   level: String,
   school: String,
