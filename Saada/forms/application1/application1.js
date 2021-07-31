@@ -1,16 +1,23 @@
 
 $ = jQuery.noConflict();
-$(document).ready(function(){
-   // console.log('this is run on page load');
-   fillNeighborhoods();
-   fillLevels();
-   fillSchools();
+$(document).ready(function () {
+    // console.log('this is run on page load');
+    fillNeighborhoods();
+    fillLevels();
+    fillSchools();
 
 });
 
 function fillNeighborhoods() {
+    $.ajax({
+        url: 'http://localhost:3000/api/lockups/neighborhoods',
+        type: 'Get'
+    }).done(response => {
+        console.log(response)
+    })
+
     let neighborhoods = [{ name: "الصفا", value: 1 }, { name: "المروة", value: 2 }, { name: "الربوة", value: 3 }
-,{ name: "أخرى:", value: 4 }];
+        , { name: "أخرى:", value: 4 }];
     var select = document.getElementById("selectNeighborhood");
     for (var i = 0; i < neighborhoods.length; i++) {
         var opt = neighborhoods[i];
@@ -21,7 +28,8 @@ function fillNeighborhoods() {
     }
 }
 
-function fillLevels() {
+function fillLevels() { 
+
     let levels = [{ name: "جامعة", value: 1 }, { name: "مدرسة", value: 2 }];
     var select = document.getElementById("selectLevel");
     for (var i = 0; i < levels.length; i++) {
@@ -34,7 +42,14 @@ function fillLevels() {
 }
 
 function fillSchools() {
-    let schools =  [{ name: "school1", value: 1 }, { name: "school3", value: 3 }];
+    $.ajax({
+        url: 'http://localhost:3000/api/lockups/schools',
+        type: 'Get'
+    }).done(response => {
+        console.log(response)
+    })
+
+    let schools = [{ name: "school1", value: 1 }, { name: "school3", value: 3 }];
     var select = document.getElementById("selectSchool");
     for (var i = 0; i < schools.length; i++) {
         var opt = schools[i];
@@ -52,7 +67,7 @@ function setSchools(event) {
     for (i = select.length - 1; i >= 0; i--) {
         select.remove(i);
     }
-    
+
     if (event == 1) {
         document.getElementById("schoolLabel").textContent = "اسم الجامعة او الكلية *";
         schools = [{ name: "school1", value: 1 }, { name: "school3", value: 3 }];
@@ -73,8 +88,8 @@ function setSchools(event) {
 
 
 function save(e) {
-const $form = $('#application')
-//let data = $form.serialize()
+    const $form = $('#application')
+    //let data = $form.serialize()
     // $form.on('submit', submitHandler)
     // e.preventDefault()
     $.ajax({
