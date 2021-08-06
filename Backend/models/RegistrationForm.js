@@ -8,6 +8,7 @@ var RegistrationFormSchema = new mongoose.Schema({
   Address: String,
   level: String,
   school: String,
+  otherSchool: String,
   email: String,
   comment: String,
 
