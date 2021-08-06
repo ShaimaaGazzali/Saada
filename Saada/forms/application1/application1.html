@@ -83,7 +83,7 @@
         <div class="item form-group row">
           <label id="schoolLabel" class="col-sm-1 col-form-label">الحي* </label>
           <div class="col-sm-10">
-            <select id="selectNeighborhood" name="neighborhood" required>
+            <select onchange="setSchools(value)" id="selectNeighborhood" name="neighborhood" required>
               <input class="m-3" type="text" placeholder="أخرى" name="otherNeighborhood" />
             </select>
           </div>
