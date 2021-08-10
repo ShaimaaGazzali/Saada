@@ -1,6 +1,7 @@
 var router = require('express').Router();
  
 router.use('/registrationForms', require('./registrationForms'));
+router.use('/paymentForms', require('./paymentForms'));
 router.use('/lockups', require('./lockups'));
 
 router.use(function(err, req, res, next){

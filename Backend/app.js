@@ -36,6 +36,7 @@ if(isProduction){
 }
  
 require('./models/RegistrationForm'); 
+require('./models/PaymentForm'); 
 
 app.use(require('./routes'));
 
