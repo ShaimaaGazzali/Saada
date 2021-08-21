@@ -44,7 +44,7 @@ html, body {
     .banner {
     position: relative;
     height: 230px;
-    background-image: url("../images/banner.jpg");  
+    background-image: url("../images/banner3.jpg");  
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -142,7 +142,7 @@ html, body {
     padding: 10px;
     border: none;
     border-radius: 5px; 
-    background: #f60101;
+    background: #d42222;
     font-size: 16px;
     color: #fff;
     cursor: pointer;

@@ -339,7 +339,7 @@ button {
 /** banner section **/
 
 .banner_main {
-     background: url(../images/banner.jpg);
+     background: url(../images/banner.PNG);
      background-repeat: no-repeat;
      min-height: 700px;
      display: flex;
@@ -598,7 +598,12 @@ button {
      border-radius: 26px;
      transition: ease-in all 0.5s;
 }
-
+.btn {
+     background: #f60101;
+     color: #fff;
+     /* border-radius: 26px; */
+     transition: ease-in all 0.5s;
+}
 
 /** Choose  section **/
 
