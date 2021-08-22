@@ -197,7 +197,7 @@ blockquote {
      padding: 30px;
 }
 
-button {
+button, a {
      border: 0;
      margin: 0;
      padding: 0;
@@ -530,6 +530,7 @@ button {
      width: 100%;
      display: block;
      margin-top: 30px;
+     text-align: center;
 }
 
 .bestCar .main_form .find_btn:hover {

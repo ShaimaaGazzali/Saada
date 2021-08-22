@@ -339,7 +339,7 @@
                                     <option value="0"> اختر نوع الخدمة </option>
                                     <option value="1">مدارس </option>
                                     <option value="2">جامعات</option>
-                                    <option value="3">شركات</option>
+                                    <!-- <option value="3">شركات</option> -->
                                  </select>
                               </div>
                               <!-- <div class="col-md-12">
@@ -362,7 +362,8 @@
                                  </select>
                               </div> -->
                               <div class="col-sm-12">
-                                 <button class="find_btn" onclick="onClick()"> بحث </button>
+                                 <a class="find_btn " href="forms/application1/application1.html" > بحث </a>
+                                 <!-- <button class="find_btn" onclick="onClick()"> بحث </button> -->
                               </div>
                            </div>
                         </form>
@@ -425,8 +426,11 @@
    }
 
    function onClick(){
-      debugger
-      if(val == 1 || val == 2)  window.location.href ="forms/application1/application1.html";
+     // debugger
+      if(val == 1 || val == 2) {
+      // window.location.href ="forms/application1/application1.html";
+       window.location.replace("forms/application1/application1.html");
+      }
       else window.location.replace("https://www.w3schools.com");
 
    }
