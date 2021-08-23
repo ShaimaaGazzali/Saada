@@ -7,7 +7,7 @@ var auth = require('../auth');
 router.post('/', auth.optional, function(req, res, next) {
      var form = new registrationForm(req.body);
      form.save().then(function(){
-          return res.json({user: form.toJSON()});
+          return res.json({data: form.toJSON()});
      }).catch(next);
 });   
 
