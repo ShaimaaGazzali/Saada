@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<style>
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+</style>
+
+<head>
+  <title>الدفع \ الشروط والاحكام </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity=""
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="../application.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script> 
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css"
+    integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script> 
+  <script src="PayForm.js"></script> 
+</head>
+
+<body>
+
+  <!-- <div class="testbox form-control form-group "> -->
+  <form id="payForm" >
+    <div class="w3-container w3-content w3-center" style="max-width:1000px" id="band">
+      <div class="banner form-group row">
+        <h1>الدفع \ الشروط والاحكام</h1>
+      </div>
+    </div>
+    <div class="w3-content" style="max-width:2000px;">
+      <!-- The Band Section -->
+      <div class="w3-container w3-content w3-center " style="max-width:800px" id="band">
+        <div class="form-group row">
+          <br>
+          <p class="center">
+            الرجاء قراءة المعلومات المختصة بالتشغيل ومواعيد الباصات اولا
+            الرجاء قراءة الاحكام والشروط قبل الموافقة عليها
+            <br>
+            يتم تعبئة الطلب بعد عملية التحويل او الدفع
+            <br> 
+            اذا لم يتم تعبئة طلب الاشتراك والحصول على سعر الخدمة وكيفية الدفع, يرجى الضغط على الرابط التالي
+            رابط طلب الاشتراك
+            https://forms.gle/nsELgHzWv5Z2QkuBA
+
+          </p>
+          <br>
+        </div>
+      </div>
+
+      <div class="w3-container w3-content w3-center " style="max-width:800px" id="band"> 
+        <div class="item form-group row">
+          <label class="col-sm-2 col-form-label">البريد الإلكتروني*</label>
+          <div class="col-sm-10">
+            <input type="email" name="email" required />
+          </div>
+        </div>  
+
+        <div class="item form-group row">
+          <label class="col-sm-2 col-form-label">الاسم الثلاثي*</label>
+          <div class="col-sm-10">
+            <input type="text" name="name" required />
+          </div>
+        </div> 
+
+        <div class="item form-group row">
+          <label class="col-sm-2 col-form-label">رقم الاثبات الشخصي *</label>
+          <div class="col-sm-10">
+            <input type="text" name="nationalId" required />
+          </div>
+        </div> 
+
+        <div class="item form-group row">
+          <label class="col-sm-2 col-form-label">صورة الدفع / التحويل *</label>
+          <input  id="fileupload" name="fileupload" type="file" /> 
+        </div> 
+
+        <div class="item form-group row">
+          <label class="col-sm-2 col-form-label">العمر*</label>
+          <div class="col-sm-10">
+            <input type="number" name="age" min="0" max="99" title="الرقم غير صحيح" required />
+          </div>
+        </div>
+
+        <div class="item form-group row">
+          <label class="col-sm-2 col-form-label">رقم الجوال الاساسي*</label>
+          <div class="col-sm-10">
+            <input type="number" name="mobile" pattern="^(05)[0-9]{8}$" title="رقم الجوال غير صحيح" required />
+          </div>
+        </div>
+
+        <div class="item form-group row">
+          <label class="col-sm-2 col-form-label">رقم جوال اخر*</label>
+          <div class="col-sm-10">
+            <input type="number" name="extraMobile" pattern="^(05)[0-9]{8}$" title="رقم الجوال غير صحيح" required />
+          </div>
+        </div> 
+
+        <div class="item form-group row">
+          <label class="col-sm-2 col-form-label">رقم هاتف ثابت</label>
+          <div class="col-sm-10">
+            <input type="number" name="landLine" title="رقم الجوال غير صحيح"   />
+          </div>
+        </div> 
+
+        <!-- معلومات القريب -->
+        <h3>بيانات قريب </h3>
+        <br style="  display: block; color:black">
+        <div class="item form-group row">
+          <label class="col-sm-2 col-form-label">الاسم الثلاثي*</label>
+          <div class="col-sm-10">
+            <input type="text" name="relativeName" required />
+          </div>
+        </div> 
+
+        <div class="item form-group row">
+          <label class="col-sm-2 col-form-label">صلة القرابة*</label>
+          <div class="col-sm-10">
+            <input type="text" name="relativeRelation" required />
+          </div>
+        </div> 
+
+        <div class="item form-group row">
+          <label class="col-sm-2 col-form-label">رقم الجوال*</label>
+          <div class="col-sm-10">
+            <input type="number" name="relativeMobile" pattern="^(05)[0-9]{8}$" title="رقم الجوال غير صحيح" required />
+          </div>
+        </div> 
+
+        <!-- معلومات السكن --> 
+        <h3>بيانات السكن </h3>
+        <div class="item form-group row">
+          <label id="schoolLabel" class="col-sm-2 col-form-label">الحي* </label>
+          <div class="col-sm-10">
+            <select onchange="setSchools(value)" id="selectNeighborhood" name="neighborhood" required>
+              <input class="m-3" type="neighborhood" placeholder="أخرى" name="otherNeighborhood" />
+            </select>
+          </div>
+        </div>
+
+        <div class="item form-group row">
+          <label class="col-sm-2 col-form-label">العنوان (الحي -الشارع الرئيسي - الشارع الفرعي - رقم المنزل -شكل ومعلم
+            مميز للمنزل)*</label>
+          <div class="col-sm-10">
+            <input type="text" name="Address" required />
+          </div>
+        </div> 
+
+        <div class="item form-group row">
+          <label class="col-sm-2 col-form-label">رابط الموقع*</label>
+          <div class="col-sm-10">
+            <input type="text" name="location" required />
+          </div>
+        </div> 
+
+        <div class="item form-group row">
+          <label class="col-sm-2 col-form-label">وصف العنوان*</label>
+          <div class="col-sm-10">
+            <input type="text" name="addressDescription" required />
+          </div>
+        </div> 
+         
+        <h3>بيانات الدراسة </h3> 
+        <div class="item form-group row">
+          <label class="col-sm-2 col-form-label"> المرحلة الدراسية*</label>
+          <div class="col-sm-10">
+            <select name="level" id="selectLevel" required>
+            </select>
+          </div>
+        </div> 
+
+        <div class="item form-group row">
+          <label class="col-sm-2 col-form-label">مقر الدراسة*</label>
+          <div class="col-sm-10">
+            <input type="text" name="school" required />
+          </div>
+        </div> 
+
+        <div class="item form-group row">
+          <label class="col-sm-2 col-form-label">الدوام*</label>
+          <div class="col-sm-10">
+            <input type="text" name="schoolTime" required />
+          </div>
+        </div> 
+
+        <div class="item form-group row">
+          <label class="col-sm-2 col-form-label">المرحلة \ السنة الجامعية والقسم *</label>
+          <div class="col-sm-10">
+            <input type="text" name="internalLevel" required />
+          </div>
+        </div> 
+
+        <div class="item form-group row">
+          <label class="col-sm-2 col-form-label"> تاريخ بداية الدوام (قد يستغرق التسجيل يوم عمل كحد ادنى) *</label>
+          <div class="col-sm-10">
+            <input type="date" name="startDate" required />
+          </div>
+        </div> 
+
+        <div class="btn-block form-group row">
+          <button  class="center-block col-2" onclick="save(event)" style="color:  #fff;">إرسال</button>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</body>
+
+</html>
