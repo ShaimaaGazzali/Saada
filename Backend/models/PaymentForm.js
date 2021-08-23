@@ -22,15 +22,35 @@ var PaymentFormSchema = new mongoose.Schema({
   otherSchool: String,
   schoolTime: String,
   startDate:String,
-  schedule:String,
-
+  schedule:String
 }, { timestamps: true });
 
 PaymentFormSchema.methods.toJSON = function () {
   return {
     title: this.title,
     description: this.description,
-    body: this.body
+    email: this.email,
+    paymentReceipt: this.paymentReceipt,
+    name: this.name,
+    nationalId: this.nationalId,
+    age: this.age,
+    mobile: this.mobile,
+    extraMobile: this.extraMobile,
+    landLine: this.landLine,
+    relativeName: this.relativeName,
+    relativeRelation: this.relativeRelation,
+    relativeMobile: this.relativeMobile,
+    neighborhood: this.neighborhood,
+    otherNeighborhood: this.otherNeighborhood,
+    Address: this.Address,
+    location: this.location,
+    addressDescription: this.addressDescription,
+    level: this.level,
+    school: this.school,
+    otherSchool: this.otherSchool,
+    schoolTime: this.schoolTime,
+    startDate:this.startDate,
+    schedule:this.schedule,
   };
 };
 
