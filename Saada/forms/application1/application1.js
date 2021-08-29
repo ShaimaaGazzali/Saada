@@ -4,11 +4,13 @@ $(document).ready(function () {
     // console.log('this is run on page load');
     fillNeighborhoods();
     fillLevels();
+    
 });
 
 function fillNeighborhoods() {
     let neighborhoods = [];
     $.ajax({
+        //url: 'http://localhost:3000/api/lockups/neighborhoods',
         url: 'https://www.saadabus.com/api/lockups/neighborhoods',
         type: 'Get'
     }).done(response => {
@@ -17,8 +19,8 @@ function fillNeighborhoods() {
         for (var i = 0; i < neighborhoods.length; i++) {
             var opt = neighborhoods[i];
             var el = document.createElement("option");
-            el.textContent = opt.name;
-            el.value = opt.value;
+            el.textContent = opt;
+            el.value = opt;
             select.appendChild(el);
         }
     })
@@ -39,15 +41,23 @@ function fillLevels() {
     setSchools(1);
 }
 
-function setSchools(event) {
-    var select = document.getElementById('selectNeighborhood');
-    var value = select.options[select.selectedIndex]?.value;
-    if (value == undefined) {
-        value = 1;
+function setSchools() {
+    var selectNeighborhood = document.getElementById('selectNeighborhood');
+    var neighborhood = selectNeighborhood.options[selectNeighborhood.selectedIndex]?.value;
+    if (neighborhood == undefined) {
+        neighborhood = 'الصفا';
     }
-    let data = 'level=' + event + '&neighborhood=' + value
+
+    var selectLevel = document.getElementById('selectLevel');
+    var level = selectLevel.options[selectLevel.selectedIndex]?.value;
+    if (level == undefined) {
+        level =1;
+    }
+
+    let data = 'level=' + level + '&neighborhood=' + neighborhood
 
     $.ajax({
+        //url: 'http://localhost:3000/api/lockups/schools',
         url: 'https://www.saadabus.com/api/lockups/schools',
         type: 'Get',
         data: data
@@ -70,9 +80,6 @@ function setSchools(event) {
 
 function save(e) {
     const $form = $('#application')
-    //let data = $form.serialize()
-    // $form.on('submit', submitHandler)
-    // e.preventDefault()
     $.ajax({
         url: 'https://www.saadabus.com/api/RegistrationForms',
         type: 'POST',

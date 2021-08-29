@@ -17,8 +17,8 @@ function fillNeighborhoods() {
         for (var i = 0; i < neighborhoods.length; i++) {
             var opt = neighborhoods[i];
             var el = document.createElement("option");
-            el.textContent = opt.name;
-            el.value = opt.value;
+            el.textContent = opt;
+            el.value = opt;
             select.appendChild(el);
         }
     })
@@ -69,4 +69,9 @@ function save(event) {
                 alert('يجب ملئ الفورم بشكل صحيح');
             }
         }).catch(err => console.log(err));
+}
+
+function openForm(){
+    window.location.replace("https://www.saadabus.com/forms/application1/application1.html");
+
 }
