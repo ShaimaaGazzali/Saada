@@ -31,7 +31,7 @@ if (!isProduction) {
 if(isProduction){
   mongoose.connect(process.env.MONGODB_URI);
 } else {
-  mongoose.connect('mongodb://localhost/Saada');
+  mongoose.connect('mongodb://saadadduser:UwJT34VAeAUx2BmG@localhost:29019/Saada');
   mongoose.set('debug', true);
 }
  
