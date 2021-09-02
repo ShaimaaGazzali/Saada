@@ -28,12 +28,9 @@ if (!isProduction) {
   app.use(errorhandler());
 }
 
-if(isProduction){
-  mongoose.connect(process.env.MONGODB_URI);
-} else {
-  mongoose.connect('mongodb://206.189.53.204:29019/Saada');
-  mongoose.set('debug', true);
-}
+ 
+mongoose.connect('mongodb://206.189.53.204:29019/Saada'); 
+ 
  
 require('./models/RegistrationForm'); 
 require('./models/PaymentForm'); 

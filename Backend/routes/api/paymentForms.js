@@ -5,11 +5,8 @@ const multer = require('multer');
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 const AWS = require('aws-sdk');
-var auth = require('../auth');
-var mongodb = require('mongodb');
-var dbConn = mongodb.MongoClient.connect('mongodb://localhost:27017');
-var url = require('url');
-var querystring = require('querystring');
+var auth = require('../auth'); 
+var url = require('url'); 
 
 const BucketName = "saada-files";
 
