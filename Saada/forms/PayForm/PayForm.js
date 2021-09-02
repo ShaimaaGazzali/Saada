@@ -50,6 +50,7 @@ function uploadFile() {
 }
 
 function save(event) { 
+    event.preventDefault()
     const $form = $('#payForm')
     uploadFile().then(
         function (value) {
@@ -63,6 +64,7 @@ function save(event) {
                     data: $form.serialize()
                 }).done(response => {
                     console.log(response)
+                    document.location.href="/";
                 })
             }
             else {
@@ -73,5 +75,4 @@ function save(event) {
 
 function openForm(){
     window.location.replace("https://www.saadabus.com/forms/application1/application1.html");
-
 }

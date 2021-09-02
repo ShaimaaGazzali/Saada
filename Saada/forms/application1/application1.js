@@ -10,7 +10,7 @@ $(document).ready(function () {
 function fillNeighborhoods() {
     let neighborhoods = [];
     $.ajax({
-        //url: 'http://localhost:3000/api/lockups/neighborhoods',
+        //url: 'https://www.saadabus.com/api/lockups/neighborhoods',
         url: 'https://www.saadabus.com/api/lockups/neighborhoods',
         type: 'Get'
     }).done(response => {
@@ -57,7 +57,7 @@ function setSchools() {
     let data = 'level=' + level + '&neighborhood=' + neighborhood
 
     $.ajax({
-        //url: 'http://localhost:3000/api/lockups/schools',
+        //url: 'https://www.saadabus.com/api/lockups/schools',
         url: 'https://www.saadabus.com/api/lockups/schools',
         type: 'Get',
         data: data
@@ -80,11 +80,13 @@ function setSchools() {
 
 function save(e) {
     const $form = $('#application')
+    e.preventDefault()
     $.ajax({
         url: 'https://www.saadabus.com/api/RegistrationForms',
         type: 'POST',
         data: $form.serialize()
     }).done(response => {
-        console.log(response)
+        console.log(response) 
+        document.location.href="/";
     })
 }
